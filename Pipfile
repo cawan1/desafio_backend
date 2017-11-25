@@ -6,8 +6,9 @@ name = "pypi"
 
 
 [packages]
-
-
+django = "*"
+djangorestframework = "*"
+Pillow = "*"
 
 [dev-packages]
 
