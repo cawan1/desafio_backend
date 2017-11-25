@@ -11,6 +11,12 @@ djangorestframework = "*"
 Pillow = "*"
 olefile = "*"
 pytz = "*"
+gunicorn = "*"
+requests = "*"
+
+[requires]
+
+python_version = "3.6"
 
 [dev-packages]
 
