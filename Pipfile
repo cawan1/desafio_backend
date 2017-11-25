@@ -9,6 +9,8 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 Pillow = "*"
+olefile = "*"
+pytz = "*"
 
 [dev-packages]
 
