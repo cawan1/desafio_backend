@@ -1,1 +1,0 @@
-web: python manage.py runserver guarded-gorge-40299.herokuapp.com:5000
