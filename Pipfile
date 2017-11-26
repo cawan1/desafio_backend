@@ -14,7 +14,7 @@ pytz = "*"
 gunicorn = "*"
 requests = "*"
 dj-database-url = "*"
-
+"psycopg2" = "*"
 
 [requires]
 
