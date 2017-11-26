@@ -9,16 +9,15 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 Pillow = "*"
-olefile = "*"
-pytz = "*"
 gunicorn = "*"
-requests = "*"
 dj-database-url = "*"
 "psycopg2" = "*"
 
 [requires]
 
 python_version = "3.6"
+
+
 
 [dev-packages]
 
