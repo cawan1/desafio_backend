@@ -13,6 +13,8 @@ olefile = "*"
 pytz = "*"
 gunicorn = "*"
 requests = "*"
+dj-database-url = "*"
+
 
 [requires]
 
