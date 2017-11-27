@@ -1,10 +1,15 @@
-from django.conf.urls import url
-from rest_framework.urlpatterns import format_suffix_patterns
+from django.conf.urls import url, include
+#from rest_framework.urlpatterns import format_suffix_patterns
 from produtos import views
+from rest_framework.routers import DefaultRouter
+#from rest_framework.schemas import get_schema_view
+
+router = DefaultRouter()
+router.register(r'produtos', views.ProdutoViewSet)
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
-            url(r'^produtos/$', views.produto_list),
-            url(r'^produtos/(?P<pk>[0-9]+)$', views.produto_detail),
+    url(r'^', include(router.urls)),
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+#urlpatterns = format_suffix_patterns(urlpatterns)
