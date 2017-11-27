@@ -4,10 +4,11 @@ from produtos.models import Produto
 
 # Create your models here.
 
-class ItemCarrinho(models.Model):
+#class ItemCarrinho(models.Model):
     #item = models.ForeignKey(Produto)
-    item = models.CharField(max_length=100)
-    quantidade = models.PositiveIntegerField(default=1)
+#    carrinho = models.ForeignKey(Carrinho, related_name='items')
+#    item = models.ForeignKey(Produto, related_name='item')
+#    quantidade = models.PositiveIntegerField(default=1)
   #  valor_produto = Produto.valor
 #    valor = models.FloatField()
 #    fator = models.CharField(max_length=1)
@@ -16,8 +17,19 @@ class ItemCarrinho(models.Model):
 
 class Carrinho(models.Model):
     owner = models.ForeignKey('auth.User', related_name='carrinho', on_delete=models.CASCADE, blank=True)
-    items = models.ManyToManyField(ItemCarrinho) #, related_name='itemcarrinho', on_delete=models.CASCADE)    
+    itemsbuy = models.CharField(max_length=100) #ItemCarrinho, related_name='items') #, on_delete=models.CASCADE)    
     #items = models.ManyToManyField(Produto, through=ItemCarrinho, blank=True)
     #items = models.CharField(choices=PRODUTOS_DISPONIVEIS, blank=True, max_length=100)
-    subtotal = models.DecimalField(max_digits=50, decimal_places=2, default=0.00, blank=True)
-    desconto = models.FloatField()
+    #subtotal = models.DecimalField(max_digits=50, decimal_places=2, default=0.00, blank=True)
+    #desconto = models.FloatField()
+
+
+class ItemCarrinho(models.Model):
+    owner = models.ForeignKey('auth.User', related_name='itemcarrinho', on_delete=models.CASCADE, blank=True)
+    #item = models.ForeignKey(Produto)
+    cart = models.ForeignKey(Carrinho, related_name='items')
+    item = models.ForeignKey(Produto, related_name='item')
+    quantidade = models.PositiveIntegerField(default=1)
+                      #  valor_produto = Produto.valor
+                      #    valor = models.FloatField()
+                      #    fator = models.CharField(max_length=1)
