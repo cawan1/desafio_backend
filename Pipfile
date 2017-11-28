@@ -8,6 +8,8 @@ name = "pypi"
 [packages]
 django = "*"
 djangorestframework = "*"
+coreapi = "*"
+Pillow = "*"
 
 [requires]
 
