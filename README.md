@@ -30,34 +30,58 @@ Falta:
 
 Passos para instalação:
  1 - pip install pipenv 
+
  2 - git clone https://github.com/cawan1/desafio_backend
+
  3 - pipenv install
+
  4 - pipenv shell
+
  5 - python manage.py makemigrations
+
  6 - python manage.py migrate
+
  7 - python manage.py createsuperuser
+
  8 - python manage.py runserver 0.0.0.0:5000
 
 Passos para execução:
 
 Listar Produtos
+
  curl -H "Content-Type: application/json" -X GET http://127.0.0.1:5000/produtos/
+
 Adicionar Produto 
+
  curl -u username:password -H "Content-Type: application/json" -X POST -d '{"nome" : "Produto1", "descricao" : "Produto muito bom.", "valor" : "200", "fator": "A"}' http://127.0.0.1:5000/produtos/
+
 Remover Produto
+
  curl -u username:password -H "Content-Type: application/json" -X DELETE http://127.0.0.1:5000/produtos/1/
+
 Editar Produto
+
  curl -u username:password -H "Content-Type: application/json" -X PUT -d '{"nome" : "Produto2", "descricao" : "Produto muito ruim.", "valor" : "100", "fator": "A"}' http://127.0.0.1:5000/produtos/1/
 
 
+
+
 Listar Carrinho
+
  curl -H "Content-Type: application/json" -X GET http://127.0.0.1:5000/carrinho/
+
 Adicionar ItemCarrinho
+
  curl -u username:password -H "Content-Type: application/json" -X POST -d '{"item": [ "http://127.0.0.1:5000/produtos/2/" ], "quantidade": 1}' http://127.0.0.1:5000/itemscarrinho/
+
  curl -u username:password -H "Content-Type: application/json" -X POST -d '{"items": ["http://127.0.0.1:5000/itemscarrinho/1/"]}' http://127.0.0.1:5000/carrinhos/
+
 Remover ItemCarrinho
+
  curl -u username:password -H "Content-Type: application/json" -X DELETE http://127.0.0.1:5000/itemscarrinho/1
+
 Remover Carrinho
+
  curl -u username:password -H "Content-Type: application/json" -X DELETE http://127.0.0.1:5000/carrinhos/1
 
 
